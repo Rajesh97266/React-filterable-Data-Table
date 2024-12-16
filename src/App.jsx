@@ -7,18 +7,20 @@ function App() {
 
   return (
     <>
-      <div className="container">
-        <h3>Filter Table Data</h3>
-        <form>
+      <div className="container mt-5">
+        <h4 className="text-primary">Filter Table Data</h4>
+        <form className="col-md-6">
           <input
+          className="form-control"
             type="text"
             placeholder="Search"
             onChange={(e) => setSearch(e.target.value)}
           />
         </form>
-        <table>
+        <table className="table table-striped table-bordered mt-3">
           <thead>
             <tr>
+              <th>S.No</th>
               <th>First Name</th>
               <th>Last Name</th>
               <th>Email</th>
@@ -41,6 +43,7 @@ function App() {
               })
               .map((item, index) => (
                 <tr key={index}>
+                  <td>{index + 1}</td>
                   <td>{item.first_name}</td>
                   <td>{item.last_name}</td>
                   <td>{item.email}</td>
